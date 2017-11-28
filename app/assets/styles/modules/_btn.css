@@ -1,0 +1,59 @@
+.btn {
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: white;
+  border: 1px solid;
+  color: $primaryGrey;
+  font-weight: 300;
+
+  &__header {
+    border: 1px solid $primaryGrey;
+    letter-spacing: 0.15rem;
+    width: 140px;
+    height: 60px;
+    left: 65px;
+    position: relative;
+    @mixin atSmall {
+      width: 120px;
+      height: 40px;
+      letter-spacing: .10rem;
+      font-size: .7rem;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      border-bottom: 1px solid $primaryGrey;
+      height: 5.3rem;
+      border-left: 1px solid $primaryGrey;
+      width: 24%;
+      left: -24%;
+      bottom: 39%
+    }
+    &:hover {
+      background-color: $primaryGrey;
+      color: white;
+    }
+  }
+  &__close {
+    color: white;
+    background-color: rgba(0,0,0,0);
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $primaryGrey;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-color: white;
+    }
+  }
+  &__modal {
+    letter-spacing: 0.15rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: 1px solid white;
+    &:hover {
+      background-color: white;
+      color: $primaryGrey;
+    }
+  }
+}

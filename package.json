@@ -1,0 +1,37 @@
+{
+  "name": "wastewater",
+  "version": "1.2.0",
+  "description": "Interactive web app for Regal Beloit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmbarley/wastewater_v2.git"
+  },
+  "author": "Ryan Barley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmbarley/wastewater_v2/issues"
+  },
+  "homepage": "https://github.com/rmbarley/wastewater_v2#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^2.2.4",
+    "jquery.2": "^1.0.0",
+    "tether": "^1.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-watch": "^4.3.11",
+    "postcss-import": "^11.0.0",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^2.1.2",
+    "postcss-simple-vars": "^4.1.0",
+    "webpack": "^3.8.1"
+  }
+}

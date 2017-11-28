@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Waste Water Render</title>
+  <link rel="stylesheet" href="./assets/styles/bootstrap.min.css">
+  <script src="https://use.fontawesome.com/7169fafb7e.js"></script>
+  <link rel="stylesheet" href="./temp/styles/styles.css">
+</head>
+
+<body>
+  <div class="map_container" style="padding-top:1rem;">
+    <!-- Main Map -->
+    <div class="map_area map">
+      <!-- Image Map -->
+      <img src="./assets/images/main_map.jpg" usemap="#waste" id="main_map" alt="" />
+      <map name="waste">
+          <area shape="poly" coords="1047,295,1392,255,1350,221,1349,209,1354,209,1354,202,1218,84,949,106,958,120,960,147,927,148" href="#1" name="sanitary" onclick="toggleView(sanitary_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="1175,554,912,599,841,459,868,454,863,419,851,394,975,376,1013,432,1079,423" href="#2" name="pump" onclick="toggleView(pump_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="1048,315,1397,274,1478,347,1468,345,1460,346,1453,347,1444,348,1437,350,1429,353,1422,358,1421,359,1410,361,1411,366,1388,369,1388,366,1359,368,1349,366,1336,365,1327,365,1317,365,1308,367,1297,369,1284,375,1278,380,1274,389,1275,413,1137,434" href="#3" name="basin" onClick="toggleView(settling_basin_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="1243,452,1374,610,1665,555,1619,514,1620,445,1618,441,1618,436,1608,431,1597,422,1594,421,1594,414,1582,415,1579,415,1568,413,1556,411,1543,411,1542,376,1540,373,1539,371,1538,365,1535,364,1517,352,1517,346,1499,348,1492,347,1484,346,1477,347,1469,345,1465,345,1460,345,1454,347,1450,347,1444,348,1439,349,1435,351,1429,354,1424,356,1422,359,1411,360,1411,366,1388,369,1387,366,1356,368,1351,366,1345,365,1340,365,1330,365,1321,365,1316,365,1307,367,1298,369,1291,371,1283,375,1278,378,1275,384,1274,389,1279,449" href="#4" name="digesters" onClick="toggleView(digesters_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="2065,598,2296,550,2239,513,2243,475,2230,461,2229,450,2204,442,2195,452,2176,456,2178,433,2167,420,2160,418,2161,409,2150,403,2131,403,2131,411,2113,418,2115,393,2101,380,2099,370,2083,362,2069,367,2069,373,2051,377,2049,386,2045,438,2037,425,2014,420,2011,432,1999,436,2000,412,1984,396,1984,389,1965,381,1951,386,1953,395,1936,397,1929,449,1875,459" href="#5" name="fermenters" onClick="toggleView(fermenters_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="970,1407,1759,1160,1396,707,1034,785,977,772,908,777,873,792,860,786,847,795,849,810,836,825,763,839" href="#6" name="clarifiers" onClick="toggleView(clarifiers_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="1751,611,2149,976,1835,1070,1478,666" href="#7" name="bioreactors" onClick="toggleView(bioreactors_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="1518,303,1669,284,1665,270,1688,265,1688,249,1679,245,1679,192,1661,183,1638,185,1635,187,1636,239,1624,238,1551,258,1550,207,1533,198,1515,197,1504,202,1504,253,1496,253,1499,274,1487,274" href="#8" name="degritters" onClick="toggleView(degritter_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="2668,556,2570,504,2582,460,2568,455,2571,443,2048,165,1966,173,1966,184,1953,187,1947,236,1893,245,2463,605" href="#9" name="secondary_clarifiers" onClick="toggleView(secondary_clarifiers_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="2170,899,2461,818,2354,740,2354,733,2363,733,2363,720,2185,592,1986,636,1987,644,1992,650,1990,671,1920,682" href="#10" name="belt_filter" onClick="toggleView(belt_filters_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+        </map>
+    </div>
+    <!-- /Main Map -->
+
+    <!-- Sanitary Office Map -->
+    <div class="sanitary_office map hide" id="sanitary_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(sanitary_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Sanitary Office</h3>
+        </div>
+      </div>
+      <img src="./assets/images/sanitary_office.png" id="sanitary_office" usemap="#sanitary_office" alt="" class="img-responsive" />
+    </div>
+    <!-- /Sanitary Office Map -->
+
+    <!-- Pump Station Map -->
+    <div class="pump_station map hide" id="pump_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(pump_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Primary Effluent Pump/Lift Station</h3>
+        </div>
+      </div>
+      <div class="map_container pump_container_fix">
+        <img src="./assets/images/pump_map.jpg" id="pump_station" usemap="#pump" alt="" class="" height="100%" width="auto" />
+        <map class="pump-map" name="pump">
+          <area shape="poly" coords="83,136,1064,123,1062,0,76,0,77,2" href="#1" data-toggle="modal" data-target="#fanModal" onmouseover="applyBlur()" onmouseout="removeBlur()" />
+          <area shape="poly" coords="630,629,690,644,930,591,929,650,935,653,943,653,950,653,954,651,953,587,973,582,972,637,976,639,982,639,983,578,1018,572,1017,339,923,330,824,342,821,327,811,325,794,327,791,346,619,363" href="#2" data-toggle="modal" data-target="#cabinetModal" onmouseover="applyBlur()" onmouseout="removeBlur()" />
+          <area shape="poly" coords="1919,724,1892,738,1244,622,1244,614,1174,604,1170,529,1109,527,1103,390,1170,400,1179,330,1302,324,1301,274,1332,268,1357,192,1366,180,1369,43,1352,41,1352,1,1529,2,1527,40,1506,41,1499,175,1516,196,1537,253,1541,268,1586,269,1585,333,1638,345,1656,335,1731,344,1723,466,1783,479,1793,462,1805,465,1809,417,1820,412,1826,344,1880,332,1918,336,1919,718" href="#3" data-toggle="modal" data-target="#generatorModal" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+          <area shape="poly" coords="0,1079,0,636,592,544,606,701,662,717,664,683,717,685,715,729,800,752,813,740,980,788,1021,764,1116,777,1132,728,1208,710,1252,736,1263,930,1368,968,1347,1079" href="#4" data-toggle="modal" data-target="#motorModal" onmouseover="applyBlur()" onmouseout="removeBlur()" />
+        </map>
+      </div>
+    </div>
+    <!-- /Pump Station Map -->
+
+    <!-- Primary Settling Basin Map -->
+    <div class="settling_basin map hide" id="settling_basin_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(settling_basin_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Primary Settling Basin</h3>
+        </div>
+      </div>
+      <img src="./assets/images/primary_settling_basin.png" id="settling_basin" usemap="#settling_basin" alt="" class="img-responsive" data-toggle="tooltip" data-placement="right" title="Tooltip on right" />
+    </div>
+    <!-- /Primary Settling Basin Map -->
+
+    <!-- Anaerobic Digesters Map -->
+    <div class="digesters map hide" id="digesters_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(digesters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Anaerobic Digesters</h3>
+        </div>
+      </div>
+      <img src="./assets/images/digesters.png" id="digesters" usemap="#digesters" alt="" class="img-responsive" />
+      <button class="btn btn__header btn__header--close" onClick="toggleView(digesters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+    </div>
+    <!-- /Anaerobic Digesters Map -->
+
+    <!-- Fermenters Map -->
+    <div class="fermenters map hide" id="fermenters_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(fermenters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Fermenters</h3>
+        </div>
+      </div>
+      <img src="./assets/images/fermenters.png" id="fermenters" usemap="#fermenters" alt="" class="img-responsive" />
+    </div>
+    <!-- /Fermenters Map -->
+
+    <!-- Clarifiers Map -->
+    <div class="clarifiers map hide" id="clarifiers_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(clarifiers_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Primary Clarifiers</h3>
+        </div>
+      </div>
+      <div class="">
+        <video id="" autoplay loop>
+          <source src="./assets/video/aeration_tank.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <!-- /Clarifiers Map -->
+
+    <!-- Bioreactors Map -->
+    <div class="bioreactors map hide" id="bioreactors_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(bioreactors_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Bioreactors</h3>
+        </div>
+      </div>
+      <img src="./assets/images/bioreactors.png" id="bioreactors" usemap="#bioreactors" alt="" class="img-responsive" />
+    </div>
+    <!-- /Bioreactors Map -->
+
+    <!-- Degritter Map -->
+    <div class="degritter map hide" id="degritter_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(degritter_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Cyclone Degritters</h3>
+        </div>
+      </div>
+      <img src="./assets/images/degritter.png" id="degritter" usemap="#degritter" alt="" class="img-responsive" />
+    </div>
+    <!-- /Degritter Map -->
+
+    <!-- Secondary Clarifiers Map -->
+    <div class="secondary_clarifiers map hide" id="secondary_clarifiers_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(secondary_clarifiers_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Secondary Clarifiers &amp; Chlorine Tanks</h3>
+        </div>
+      </div>
+      <img src="./assets/images/secondary_clarifiers.png" id="secondary_clarifiers" usemap="#secondary_clarifiers" alt="" class="img-responsive" />
+    </div>
+    <!-- /Secondary Clarifiers Map -->
+
+    <!-- Belt Filters Map -->
+    <div class="belt_filters map hide" id="belt_filters_view">
+      <div class="row">
+        <button class="btn btn__header btn__header--close" onClick="toggleView(belt_filters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <div class="header">
+          <h3 class="header__title">Digesters &amp; Belt Filter Presses</h3>
+        </div>
+      </div>
+      <img src="./assets/images/belt_filters.png" id="belt_filters" usemap="#belt_filters" alt="" class="img-responsive" />
+    </div>
+    <!-- /Belt Filters Map -->
+  </div>
+  <!-- Modals -->
+  <!-- Pump Station Modals -->
+  <div class="modal modal-fullscreen" id="cabinetModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog" style="max-width:none;">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <div class="cabinet">
+                  <video id="cabinetVideo">
+                        <source src="./assets/video/open.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                </div>
+                <div class="cabinet_inside hide">
+                  <img src="./assets/images/cabinet_interior.jpg" class="popout-image modal__img img-responsive" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10">
+                    <h5 class="modal-header">Regal's Cabinet Solutions</h5>
+                  </div>
+                  <div class="col-2">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-text">
+                <h5>Regal's Control Solutions</h5>
+                <p>The <b>Benshaw<sup>&reg;</sup></b> brand provides low voltage solid state starters and AC drives for a wide range of applications from pumps, compressors, fans, and blowers. We have earned a solid reputation for building rugged, reliable
+                  performance. User friendly features include on-boarding metering and user-selectable options for all of our control products.
+                </p>
+                <h5>Solid State Starters</h5>
+                <p><b>Benshaw<sup>&reg;</sup></b> builds standard and engineered starter products that include a range of open chassis with continuous duty non-bypassed starters, open chassis starters with integral bypass, and prepackaged reduced voltage
+                  solid state starters. Combination circuit breaker configurations, with non-bypassed continuous duty configurations and integral bypass configurations, are available to suit your application requirements.
+                </p>
+                <p>All of <b>Benshaw<sup>&reg;</sup></b>’s low voltage stacks can be integrated with <b>Benshaw<sup>&reg;</sup></b>’s MX2 or next generation MX3 control technology.
+                </p>
+                <h5>AC Drives</h5>
+                <p>
+                  <b>Benshaw<sup>&reg;</sup></b>’s drive products include an intuitive user interface, integrated control and power electronics, and can be provided with bypass and isolation contactors. Additionally, we offer a host of options that tailor
+                  our AC drives to the specific requirements of the application. Our engineer and design teams draw on experience of extensive real-world drive applications. If a standard drive doesn’t fit your needs, <b>Benshaw<sup>&reg;</sup></b> can
+                  engineer and build one that does— with the shortest lead time in the industry.
+                </p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul style="list-style:none;padding: 1rem 0;">
+                  <li>Intelligent Low Voltage Solid State Motor Control Products MKT 125-003R</li>
+                  <li>RSi Variable Frequency Drive Products and Systems Brochure MKT 125-006R</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade modal-fullscreen" id="motorModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog" style="max-width:none;">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="./assets/images/placeholder.png" width="100%" alt="">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10">
+                    <h5 class="modal-header">Regal's Pump Solutions</h5>
+                  </div>
+                  <div class="col-2">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-text">
+                <p>The <b>Marathon</b> brand’s of pump motors are at the heart of the pump to provide reliable, dependable service in the most demanding applications and the harshest environments.</p>
+                <h5>Pump Motors</h5>
+                <p>Regal is an industry leader in low and medium voltage NEMA and IEC motors for the water and wastewater industry. The low voltage motor efficiency levels include IE2, IE3 and IE4.
+                </p>
+                <p>The low voltage products include: Close-Coupled JM/JP/C-Face motors in open and TEFC construction, Footed and Footless; Vertical Solid Shaft P-Base motors in open and TEFC construction; Vertical Hollow Shaft motors in WPI and WPII construction;
+                  Severe Duty motors in TEFC construction; PMAC Severe Duty motors in TEFC construction.</p>
+                <p>
+                  The medium voltage motors are built in NEMA and IEC configurations and include: NEMA open (IP23) and TEFC construction; IEC open, Weather-Protected I, Weather-Protected II, TEFC, TEACC, and TEWAC construction. These motors are built in high efficiency
+                  designs.
+                </p>
+                <p>The voltage range is from 2300V to 13.8kV 50HZ and 60HZ.</p>
+                <p>All of <b>Marathon</b> motors meet or exceed NEMA and IEC requirements. They are CE Certified, CSA Certified, NOM and UL Listed as standard.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul style="list-style:none;padding: 1rem 0;">
+                  <li>Vertical Solid Shaft P-Base Motors Brochure SB567</li>
+                  <li>Pump Motor Brochure SB574</li>
+                  <li>Large Induction Motors Brochure SB522</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade modal-fullscreen" id="fanModal">
+    <div class="modal-container fan-modal_container" role="document">
+      <div class="modal-dialog" style="max-width:none;">
+        <video id="fanVideo">
+          <source src="./assets/video/fans.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="fan-content hide">
+        <div class="fan-text">
+          <div class="row no-gutters">
+            <div class="col-10">
+              <h5 class="modal-header border-reset modal-header__fan-left">Regal's Fan Solutions</h5>
+            </div>
+            <div class="col-2">
+              <button class="modal-header border-reset modal-header__fan-right btn btn__close btn__close__fan" data-dismiss="modal" aria-label="Close">
+                <i class="fa fa-times fa-times-fan" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-text modal-text__fan">
+            <p>Both the <b>Genteq<sup>&reg;</sup></b> and <b>Marathon<sup>&reg;</sup></b> brands of fan motors have been industry leaders for over 100 years: producing single and three phase induction motors and leading-edge BLDC technologies.</p>
+            <h5>Induction Motors</h5>
+            <p><b>Marathon Motors<sup>&reg;</sup></b> produces a broad array of single and three phase NEMA and IEC induction motors for a wide range of fan and blower applications. <b>Marathon<sup>&reg;</sup></b> builds open, TEFC and explosion proof fan
+              and blower motors in 48 and 56 frames.</p>
+            <h5>BLDC Motors</h5>
+            <p><b>Genteq<sup>&reg;</sup></b> has led the fan and blower industry for over 30 years with innovative products such as the first generation of electrically commutated motors which were introduced in 1987 and used in residential HVAC systems.
+              Today, <b>Genteq<sup>&reg;</sup></b> incorporates their patented BLDC technology to a wide range of applications in commercial and industrial fans. These high-performance motors offer exceptional energy savings, performance, system communications,
+              direct drop-in for induction motors and ease of installation.</p>
+            <p>All of <b>Genteq<sup>&reg;</sup></b> and <b>Marathon Motors<sup>&reg;</sup></b> meet NEMA and IEC requirements. They are CE Certified, CSA Certified and UL Listed.</p>
+            <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+            <ul style="list-style:none;padding: 1rem 0;">
+              <li><b>Genteq<sup>&reg;</sup></b> 142R 460V electronic flyer</li>
+              <li><b>Marathon<sup>&reg;</sup></b> General Motor Catalog SB300</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade modal-fullscreen" id="generatorModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <video id="generatorVideo" class="popout-image" width="100%">
+                  <source src="./assets/video/generator.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10">
+                    <h5 class="modal-header">Regal's Generator Solutions</h5>
+                  </div>
+                  <div class="col-2">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul style="list-style:none;padding: 1rem 0;">
+                  <li><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</li>
+                  <li>MAGNAMAX Brochure SB370</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Pump Station Modals -->
+  <!-- /Modals -->
+
+  <script type="text/javascript" src="./assets/scripts/jquery.min.js"></script>
+  <script src="./assets/scripts/bootstrap.min.js"></script>
+  <script src="https://www.jqueryscript.net/demo/Responsive-Fullscreen-Modal-Plugin-For-Bootstrap-3-4/dist/bs-modal-fullscreen.js"></script>
+  <script src="./assets/scripts/imagemapster.min.js"></script>
+  <script src="./temp/scripts/App.js"></script>
+</body>
+
+</html>

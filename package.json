@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/rmbarley/wastewater_v2#readme",
   "dependencies": {
+    "blazy": "^1.8.2",
     "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^2.2.4",
     "jquery.2": "^1.0.0",
+    "lazysizes": "^4.0.1",
     "tether": "^1.4.0"
   },
   "devDependencies": {

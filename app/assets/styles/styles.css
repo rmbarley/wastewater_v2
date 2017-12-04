@@ -68,6 +68,12 @@
   position: relative;
   width: 30%;
   margin-top: .5rem;
+  @mixin atSmall {
+    left: 0;
+    top: 3%;
+    width: 75%;
+    margin: 0 auto;
+  }
 }
 
 .btn-close__fan {

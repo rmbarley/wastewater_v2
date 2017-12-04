@@ -114,6 +114,13 @@ margin: 0 auto
           box-shadow: rgba(0, 0, 0, 0.5) 0 45px 79px;
 }
 
+@media (max-width: 750px) {
+
+.mapster_tooltip {
+    visibility: hidden
+}
+  }
+
 .mapster_tooltip:before {
     content: "";
     position: absolute;
@@ -320,6 +327,16 @@ margin: 0 auto
   width: 30%;
   margin-top: .5rem;
 }
+
+@media (max-width: 750px) {
+
+.fan-text {
+    left: 0;
+    top: 3%;
+    width: 75%;
+    margin: 0 auto
+}
+  }
 
 .btn-close__fan {
   padding-left: 0.5rem;

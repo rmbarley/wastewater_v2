@@ -101,15 +101,6 @@ video {
   height: 100% !important;
 }
 
-#cabinetVideo {
-  border: 1px white solid;
-}
-
-.popout-image {
-  border: 1px white solid;
-  width: 100%;
-}
-
 .fa-times {
   position: absolute;
   top: 35%;

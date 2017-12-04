@@ -1,4 +1,3 @@
-var ImageResize = require('./modules/ImageResize');
 
 var $tooltip = $('<div>', {"class": "mapster_tooltip"})
 

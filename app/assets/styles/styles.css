@@ -6,6 +6,7 @@
 @import "modules/_header";
 @import "modules/_btn";
 @import "modules/_row";
+@import "modules/_hotspots";
 
 
 .map_container {

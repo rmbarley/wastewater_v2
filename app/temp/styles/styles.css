@@ -284,7 +284,7 @@ margin: 0 auto
   top: 13%;
 }
 
-#pump {
+#pumphouse {
   left: 33%;
   top: 29%;
 }
@@ -324,6 +324,28 @@ margin: 0 auto
   top: 22%;
 }
 
+/* Pumphouse hotspots */
+
+#fans {
+  left: 33%;
+  top: 19%;
+}
+
+#pump {
+  left: 25%;
+  top: 76%;
+}
+
+#cabinet {
+  left: 39%;
+  top: 50%;
+}
+
+#generator {
+  left: 73%;
+  top: 52%;
+}
+
 .dot {
   display: hidden;
 }
@@ -351,19 +373,20 @@ margin: 0 auto
 
 @media (max-width: 750px) {
 
-.pulse {  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-  margin-left: -10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: white;
-  border-radius: 50%;
-  border: 2px solid #6947BA;
-  -webkit-animation: pulsate 2s ease-out;
-  -webkit-animation-iteration-count: infinite
-  /*     opacity: 0.0 */
+.pulse {
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #6947BA;
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite
+    /*     opacity: 0.0 */
 }
   }
 

@@ -289,6 +289,11 @@ margin: 0 auto
   top: 29%;
 }
 
+#digesters {
+  left: 48%;
+    top: 28%;
+}
+
 #settling_basin {
   left: 43%;
   top: 23%;
@@ -305,8 +310,8 @@ margin: 0 auto
 }
 
 #bioreactor {
-  left: 48%;
-  top: 28%;
+  left: 58%;
+top: 48%;
 }
 
 #degritter {
@@ -315,13 +320,13 @@ margin: 0 auto
 }
 
 #secondary_clarifiers {
-  left: 58%;
-  top: 48%;
+  left: 71%;
+    top: 23%;
 }
 
 #belt_filter {
-  left: 70%;
-  top: 22%;
+  left: 69%;
+  top: 42%;
 }
 
 /* Pumphouse hotspots */

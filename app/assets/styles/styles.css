@@ -7,6 +7,7 @@
 @import "modules/_btn";
 @import "modules/_row";
 @import "modules/_hotspots";
+@import "modules/_custommodal";
 
 
 .map_container {

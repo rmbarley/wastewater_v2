@@ -8,7 +8,7 @@
   <title>Waste Water Render</title>
   <link rel="stylesheet" href="./assets/plugins/bootstrap.min.css">
   <script src="https://use.fontawesome.com/7169fafb7e.js"></script>
-  <link rel="stylesheet" href="assets/styles/styles-8a42c1fab3.css"/>
+  <link rel="stylesheet" href="assets/styles/styles-979c532503.css"/>
 
   <script src="assets/scripts/Vendor-9fcb5fcd82.js"></script>
 </head>
@@ -75,10 +75,10 @@
 
     <!-- /Main Map -->
 
-    <!-- Sanitary Office Map -->
+    <!-- 1. Sanitary Office Map -->
     <div class="sanitary_office map hide" id="sanitary_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(sanitary_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(sanitary_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Sanitary Office</h3>
         </div>
@@ -87,10 +87,10 @@
     </div>
     <!-- /Sanitary Office Map -->
 
-    <!-- Pump Station Map -->
+    <!-- 2. Pump Station Map -->
     <div class="pump_station map hide" id="pump_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(pump_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(pump_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Primary Effluent Pump/Lift Station</h3>
         </div>
@@ -123,47 +123,70 @@
     </div>
     <!-- /Pump Station Map -->
 
-    <!-- Primary Settling Basin Map -->
+    <!-- 3. Primary Settling Basin Map -->
     <div class="settling_basin map hide" id="settling_basin_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(settling_basin_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(settling_basin_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Primary Settling Basin</h3>
         </div>
       </div>
       <img src="./assets/images/primary_settling_basin.jpg" id="settling_basin" usemap="#settling_basin" alt="" class="img-responsive " />
+      <div class="hotspot" id="sludge_drive" data-toggle="modal" data-target="#sludgeModal">
+        <div class="pulse pulse--settling-basin"></div>
+        <div class="dot dot--settling_basin"></div>
+      </div>
+      <div class="hotspot" id="contactor_drive" data-toggle="modal" data-target="#contactorModal">
+        <div class="pulse pulse--settling-basin"></div>
+        <div class="dot dot--settling_basin"></div>
+      </div>
     </div>
     <!-- /Primary Settling Basin Map -->
 
-    <!-- Anaerobic Digesters Map -->
+    <!-- 4. Anaerobic Digesters Map -->
     <div class="digesters map hide" id="digesters_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(digesters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(digesters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Anaerobic Digesters</h3>
         </div>
       </div>
       <img src="./assets/images/digesters.png" id="digesters" usemap="#digesters" alt="" class="img-responsive " />
-      <button class="btn btn__header btn__header--close" onclick="toggleView(digesters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+      <div class="hotspot" id="digester_motor" data-toggle="modal" data-target="#digesterMotorModal">
+        <div class="pulse pulse--settling-basin"></div>
+        <div class="dot dot--settling_basin"></div>
+      </div>
+      <div class="hotspot" id="digester_pump" data-toggle="modal" data-target="#digesterPumpModal">
+        <div class="pulse pulse--settling-basin"></div>
+        <div class="dot dot--settling_basin"></div>
+      </div>
+      <div class="hotspot" id="digester_genset" data-toggle="modal" data-target="#digesterGensetModal">
+        <div class="pulse pulse--settling-basin"></div>
+        <div class="dot dot--settling_basin"></div>
+      </div>
     </div>
     <!-- /Anaerobic Digesters Map -->
 
-    <!-- Fermenters Map -->
+    <!-- 5. Fermenters Map -->
     <div class="fermenters map hide" id="fermenters_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(fermenters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(fermenters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Fermenters</h3>
         </div>
       </div>
       <img src="./assets/images/fermenters.png" id="fermenters" usemap="#fermenters" alt="" class="img-responsive " />
+      <div class="hotspot" id="fermenter_center" data-toggle="modal" data-target="#fermenterModal">
+        <div class="pulse pulse--settling-basin"></div>
+        <div class="dot dot--settling_basin"></div>
+      </div>
     </div>
     <!-- /Fermenters Map -->
 
-    <!-- Clarifiers Map -->
+    <!-- 6. Clarifiers Map -->
     <div class="clarifiers map hide" id="clarifiers_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(clarifiers_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(clarifiers_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Primary Clarifiers</h3>
         </div>
@@ -173,6 +196,10 @@
           <source src="./assets/video/aeration_tank.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <div class="hotspot" id="clarifier_center" data-toggle="modal" data-target="#clarifierCenterModal">
+          <div class="pulse pulse--settling-basin"></div>
+          <div class="dot dot--settling_basin"></div>
+        </div>
       </div>
     </div>
     <!-- /Clarifiers Map -->
@@ -180,7 +207,7 @@
     <!-- Bioreactors Map -->
     <div class="bioreactors map hide" id="bioreactors_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(bioreactors_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(bioreactors_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Bioreactors</h3>
         </div>
@@ -192,19 +219,23 @@
     <!-- Degritter Map -->
     <div class="degritter map hide" id="degritter_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(degritter_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(degritter_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Cyclone Degritters</h3>
         </div>
       </div>
       <img src="./assets/images/degritter.png" id="degritter" usemap="#degritter" alt="" class="img-responsive " />
+      <div class="hotspot" id="degritter_center" data-toggle="modal" data-target="#degritterModal">
+        <div class="pulse pulse--settling-basin"></div>
+        <div class="dot dot--settling_basin"></div>
+      </div>
     </div>
     <!-- /Degritter Map -->
 
     <!-- Secondary Clarifiers Map -->
     <div class="secondary_clarifiers map hide" id="secondary_clarifiers_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(secondary_clarifiers_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(secondary_clarifiers_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Secondary Clarifiers &amp; Chlorine Tanks</h3>
         </div>
@@ -216,7 +247,7 @@
     <!-- Belt Filters Map -->
     <div class="belt_filters map hide" id="belt_filters_view">
       <div class="row">
-        <button class="btn btn__header btn__header--close" onclick="toggleView(belt_filters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button class="btn btn__header btn__header--close" onclick="toggleView(belt_filters_view)"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Back</button>
         <div class="header">
           <h3 class="header__title">Digesters &amp; Belt Filter Presses</h3>
         </div>
@@ -226,7 +257,7 @@
     <!-- /Belt Filters Map -->
   </div>
   <!-- Modals -->
-  <!-- Pump Station Modals -->
+  <!-- 2. Pump Station Modals -->
   <div class="modal modal-fullscreen" id="cabinetModal">
     <div class="modal-container" role="document">
       <div class="modal-dialog" style="max-width:none;">
@@ -278,8 +309,8 @@
                 </p>
                 <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
                 <ul class="modal--link_list">
-                  <li><a href="http://www.benshaw.com/uploadedFiles/Literature/Benshaw_LV%20SS%20Motor_Control_Overview.pdf" target="_blank">Intelligent Low Voltage Solid State Motor Control Products MKT 125-003R</a></li>
-                  <li><a href="" target="_blank">RSi Variable Frequency Drive Products and Systems Brochure MKT 125-006R</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.benshaw.com/uploadedFiles/Literature/Benshaw_LV%20SS%20Motor_Control_Overview.pdf" target="_blank">Intelligent Low Voltage Solid State Motor Control Products MKT 125-003R</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="" target="_blank">RSi Variable Frequency Drive Products and Systems Brochure MKT 125-006R</a></li>
                 </ul>
               </div>
             </div>
@@ -288,7 +319,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal fade modal-fullscreen" id="motorModal">
     <div class="modal-container" role="document">
       <div class="modal-dialog" style="max-width:none;">
@@ -328,9 +358,9 @@
                 <p>All of <b>Marathon</b> motors meet or exceed NEMA and IEC requirements. They are CE Certified, CSA Certified, NOM and UL Listed as standard.</p>
                 <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
                 <ul class="modal--link_list" style="">
-                  <li><a href="https://regalbeloitliterature.callmss.com/filedownload.php?S_card=SB567" target="_blank">Vertical Solid Shaft P-Base Motors Brochure SB567</a></li>
-                  <li><a href="https://regalbeloitliterature.callmss.com/filedownload.php?S_card=SB574" target="_blank">Pump Motor Brochure SB574</a></li>
-                  <li><a href="https://regalbeloitliterature.callmss.com/filedownload.php?S_card=SB522" target="_blank">Large Induction Motors Brochure SB522</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="https://regalbeloitliterature.callmss.com/filedownload.php?S_card=SB567" target="_blank">Vertical Solid Shaft P-Base Motors Brochure SB567</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="https://regalbeloitliterature.callmss.com/filedownload.php?S_card=SB574" target="_blank">Pump Motor Brochure SB574</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="https://regalbeloitliterature.callmss.com/filedownload.php?S_card=SB522" target="_blank">Large Induction Motors Brochure SB522</a></li>
                 </ul>
               </div>
             </div>
@@ -339,7 +369,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal fade modal-fullscreen" id="fanModal">
     <div class="modal-container fan-modal_container" role="document">
       <div class="modal-dialog" style="max-width:none;">
@@ -372,15 +401,14 @@
             <p>All of <b>Genteq<sup>&reg;</sup></b> and <b>Marathon Motors<sup>&reg;</sup></b> meet NEMA and IEC requirements. They are CE Certified, CSA Certified and UL Listed.</p>
             <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
             <ul class="modal--link_list">
-              <li><a href="https://www.genteqmotors.com/assets/0/96/101/111/112/61d26770-2bdc-4a56-a153-9d0fb702ec48.pdf" target="_blank"><b>Genteq<sup>&reg;</sup></b> 142R 460V electronic flyer</a></li>
-              <li><a href="https://regalbeloitliterature.callmss.com/filedownload.php?S_card=SB300" target="_blank"><b>Marathon<sup>&reg;</sup></b> General Motor Catalog SB300</a></li>
+              <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="https://www.genteqmotors.com/assets/0/96/101/111/112/61d26770-2bdc-4a56-a153-9d0fb702ec48.pdf" target="_blank"><b>Genteq<sup>&reg;</sup></b> 142R 460V electronic flyer</a></li>
+              <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="https://regalbeloitliterature.callmss.com/filedownload.php?S_card=SB300" target="_blank"><b>Marathon<sup>&reg;</sup></b> General Motor Catalog SB300</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="modal fade modal-fullscreen" id="generatorModal">
     <div class="modal-container" role="document">
       <div class="modal-dialog">
@@ -424,8 +452,8 @@
                 <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
                 <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
                 <ul class="modal--link_list">
-                  <li><a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
-                  <li><a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
                 </ul>
               </div>
             </div>
@@ -435,6 +463,476 @@
     </div>
   </div>
   <!-- /Pump Station Modals -->
+
+  <!-- 3. Primary Settling Basin Modals -->
+  <div class="modal fade modal-fullscreen" id="contactorModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Contactor+Drive+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Contactor Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade modal-fullscreen" id="sludgeModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Sludge+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Sludge Drive Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Primary Settling Basin Modals -->
+
+  <!-- 4. Anaerobic Digester Modals -->
+  <div class="modal fade modal-fullscreen" id="digesterPumpModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Pump+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Pumphouse Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade modal-fullscreen" id="digesterMotorModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Motor+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Motor Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade modal-fullscreen" id="digesterGensetModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Genset+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Genset Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Anaerobic Digester Modals -->
+
+  <!-- 5. Fermenter Modals -->
+  <div class="modal fade modal-fullscreen" id="fermenterModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Fermenter+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Fermenter Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Fermenter Modals -->
+
+  <!-- 6. Primary Clarifiers & Aeration Tanks Modals -->
+  <div class="modal fade modal-fullscreen" id="clarifierModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Primary+Clarifier+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Clarifier Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Primary Clarifiers & Aeration Tanks Modals -->
+
+  <!-- 7. Primary Clarifiers & Aeration Tanks Modals -->
+  <!-- /Primary Clarifiers & Aeration Tanks Modals -->
+
+  <!-- 8. Cyclone Degritter Modals -->
+  <div class="modal fade modal-fullscreen" id="degritterModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Cyclone+Degritter+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Degritter Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Cyclone Degritter Modals -->
+
+  <!-- 9. Primary Clarifiers & Aeration Tanks Modals -->
+  <!-- /Primary Clarifiers & Aeration Tanks Modals -->
+
+  <!-- 10. Primary Clarifiers & Aeration Tanks Modals -->
+  <div class="modal fade modal-fullscreen" id="clarifierModal">
+    <div class="modal-container" role="document">
+      <div class="modal-dialog">
+        <div class="container popout-container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="modal__asset">
+                <img src="https://dummyimage.com/1280%20x%20720/a89fa8/010208.jpg&text=Primary+Clarifier+Placeholder" alt="" class="modal__img">
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="modal__header">
+                <div class="row no-gutters">
+                  <div class="col-10 col-sm-11">
+                    <h5 class="modal-header">Regal's Clarifier Solutions</h5>
+                  </div>
+                  <div class="col-2 col-sm-1">
+                    <button class="modal-header btn btn__close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-text">
+                <p>For over 50 years, the <b>Marathon<sup>&reg;</sup></b> generator brand has provided solutions for pump houses and lift stations in critical applications within the water and wastewater industry. Regal has built a reputation for providing
+                  powerful performance, reliable power generation, and easy installation.</p>
+
+                <h5><b>MAGNAPLUS<sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAPLUS<sup>&reg;</sup></b> generator range is from 5 to 430kW 60HZ and from 5 to 420kW 50HZ. The <b>MAGNAPLUS<sup>&reg;</sup></b> is a ruggedly constructed, field adaptable, permanent magnet generator. For installations requiring
+                  fault current support or applications involving non-linear loads, it can be coupled with our innovative PM300 or DVR2000E voltage regulator. Additionally, the <b>MAGNAPLUS<sup>&reg;</sup></b> generators are fully guarded for operator
+                  safety and generator protection.</p>
+
+                <h5><b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b></h5>
+                <p>The <b>MAGNAMAX<sup>DVR</sup><sup>&reg;</sup></b> generator has a range of 118 to 2370kW 60HZ and from 136 to 2400kW 50 HZ. It is the ideal choice for larger loads and offers exceptional transient performance. The DVR2000E digital voltage
+                  regulator provides 25% regulation and three phase RMS sensing. The generator’s heavy duty construction, oversized conduit box, Class H insulation system, and shielded bearing system gives years of trouble-free service in the toughest
+                  of environments.</p>
+                <p>All <b>Marathon<sup>&reg;</sup></b> generators meet NEMA MG1-32, BS5000, and IEC 34-1 requirements. They are CE Certified, CSA Certified, and UL Listed.</p>
+                <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                <ul class="modal--link_list">
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/GPN028.pdf" target="_blank"><b>MAGNAPLUS<sup>&reg;</sup></b> Brochure GPN028</a></li>
+                  <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.marathonelectric.com/generators/docs/manuals/SB370.pdf" target="_blank">MAGNAMAX Brochure SB370</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Primary Clarifiers & Aeration Tanks Modals -->
+
   <!-- /Modals -->
 
   <script type="text/javascript" src="./assets/plugins/jquery.min.js"></script>

@@ -1,10 +1,7 @@
 .hotspot {
-  display: hidden;
-  @mixin atSmall {
-    margin: 25px;
-    width: 20px;
-    position: absolute;
-  }
+  margin: 25px;
+  width: 20px;
+  position: absolute;
 }
 
 #sanitary {
@@ -19,7 +16,7 @@
 
 #digesters {
   left: 48%;
-    top: 28%;
+  top: 28%;
 }
 
 #settling_basin {
@@ -57,7 +54,7 @@ top: 48%;
   top: 42%;
 }
 
-/* Pumphouse hotspots */
+/* 2. Pumphouse hotspots */
 
 #fans {
   left: 33%;
@@ -79,8 +76,65 @@ top: 48%;
   top: 52%;
 }
 
+/* 3. Primary Settling Basin Hotspots */
+#sludge_drive {
+  left: 69%;
+  top: 32%;
+}
+
+#contactor_drive {
+  left: 22%;
+  top: 53%;
+}
+
+/* 4. Anaerobic Digester Hotspots */
+#digester_pump {
+  left: 14%;
+  top: 74%;
+}
+#digester_motor {
+  left: 48%;
+  top: 25%;
+}
+#digester_genset {
+  left: 27%;
+  top: 76%;
+}
+/* 5. Fermenter Hotspot */
+#fermenter_center {
+    left: 40%;
+    top: 55%;
+}
+/* 6. Primary Aeration Clarifier Hotspot */
+#clarifier_center {
+  left: 50%;
+  top: 47%;
+}
+/* 7. Bioreactor Hotspot */
+
+/* 8. Degritter Hotspot */
+#degritter_center {
+  left: 50%;
+  top: 47%;
+}
+/* 9. Secondary Clarifier Clarifier Hotspot */
+
+/* 10. Belt Filter Hotspot */
+
 .dot {
-  display: hidden;
+  &--settling_basin {
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 50%;
+    position: absolute;
+    background: $regalPurple;
+    border: 2px solid $regalPurple;
+    top: 50%;
+    left: 50%;
+    opacity: 0.6;
+  }
   @mixin atSmall {
     width: 20px;
     height: 20px;
@@ -97,8 +151,22 @@ top: 48%;
 }
 
 .pulse {
-  display: hidden;
   @mixin atSmall {
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid $regalPurple;
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    /*     opacity: 0.0 */
+  }
+  &--settling-basin {
     width: 20px;
     height: 20px;
     margin-top: -10px;

@@ -8,6 +8,9 @@
     & a {
       color: white;
     }
+    &__links {
+      line-height: 1.6rem;
+    }
   }
 }
 

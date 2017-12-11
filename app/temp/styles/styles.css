@@ -26,6 +26,10 @@ img {
       color: white;
     }
 
+.modal--link_list__links {
+      line-height: 1.6rem;
+    }
+
 .modal-container {
   width: 100%;
   height: 100%;

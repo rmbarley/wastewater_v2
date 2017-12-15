@@ -82,7 +82,7 @@
 
 .modal__video {
   border: 1px solid white;
-  width: 100% !important;
+  width: 99% !important;
   height: 102% !important;
   @mixin atSmall {
     height: 98% !important;

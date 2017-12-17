@@ -115,3 +115,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#fanVideo {
+  width: 100%;
+}

@@ -122,7 +122,7 @@ top: 48%;
 /* 10. Belt Filter Hotspot */
 
 .dot {
-  &--settling_basin {
+  &--settling-basin {
     width: 20px;
     height: 20px;
     margin-left: -10px;

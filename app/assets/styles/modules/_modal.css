@@ -51,7 +51,7 @@
 
 .modal-text {
   color: white;
-  font-size: .8rem;
+  font-size: 1rem;
   @mixin atSmall {
     position: relative;
     top: -4%;

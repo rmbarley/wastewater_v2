@@ -111,10 +111,10 @@ window.toggleView = function(view) {
       $(view).toggleClass('hide');
     });
   } else {
-    $(view).fadeToggle(400, 'linear', function() {
-      $('.map_area').fadeToggle('fast');
-    });
+    $(view).toggleClass('hide');
+    $('.map_area').fadeToggle(300, 'linear');
   }
+
   removeBlur();
   onWindowResize();
 }
@@ -171,10 +171,18 @@ window.removeBlur = function() {
   $('img[src$="_map.jpg"]').css('filter', '');
 }
 
+$(window).on('show.bs.modal', function (e) {
+  $('.hotspot').addClass('hide');
+})
+$(window).on('hide.bs.modal', function (e) {
+  $('.hotspot').removeClass('hide');
+})
+
 // When modal closes, scroll to top of screen
 $(window).on('hidden.bs.modal', function (e) {
   window.scrollTo(0,0);
 })
+
 
 // lock phones in landscape mode
 // var start = function() {

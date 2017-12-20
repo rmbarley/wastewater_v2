@@ -171,13 +171,6 @@ window.removeBlur = function() {
   $('img[src$="_map.jpg"]').css('filter', '');
 }
 
-$(window).on('show.bs.modal', function (e) {
-  $('.hotspot').addClass('hide');
-})
-$(window).on('hide.bs.modal', function (e) {
-  $('.hotspot').removeClass('hide');
-})
-
 // When modal closes, scroll to top of screen
 $(window).on('hidden.bs.modal', function (e) {
   window.scrollTo(0,0);

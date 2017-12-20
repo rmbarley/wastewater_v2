@@ -11,6 +11,10 @@ img {
   width: 100%;
 }
 
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
 .modal {
   width: 100%;
   height: 100%;
@@ -637,4 +641,8 @@ top: 48%;
 
 #fanVideo {
   width: 100%;
+}
+
+.modal-open, .modal-open .navbar-fixed-top {
+  margin-right: 0 !important;
 }

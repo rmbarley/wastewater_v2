@@ -165,6 +165,9 @@ top: 48%;
     border: 2px solid $regalPurple;
     -webkit-animation: pulsate 2s ease-out;
     -webkit-animation-iteration-count: infinite;
+    -ms-border-radius: 50%;
+    -ms-animation: pulsate 2s ease-out;
+    -ms-animation-iteration-count: infinite;
     /*     opacity: 0.0 */
   }
   &--settling-basin {
@@ -180,6 +183,9 @@ top: 48%;
     border: 2px solid $regalPurple;
     -webkit-animation: pulsate 2s ease-out;
     -webkit-animation-iteration-count: infinite;
+    -ms-border-radius: 50%;
+    -ms-animation: pulsate 2s ease-out;
+    -ms-animation-iteration-count: infinite;
     /*     opacity: 0.0 */
   }
 }
@@ -194,4 +200,43 @@ top: 48%;
     -webkit-transform: scale(2.5, 2.5);
     opacity: 0.0;
   }
+}
+@-ms-keyframes pulsate {
+    0% {
+        -ms-transform: scale(1.0, 1.0);
+        opacity: 0.9;
+    }
+    /* 50% {
+        opacity: 1.0;
+    } */
+    100% {
+        -ms-transform: scale(2.5, 2.5);
+        opacity: 0.0;
+    }
+}
+@-o-keyframes pulsate {
+    0% {
+        -o-transform: scale(1.0, 1.0);
+        opacity: 0.9;
+    }
+    /* 50% {
+        opacity: 1.0;
+    } */
+    100% {
+        -o-transform: scale(2.5, 2.5);
+        opacity: 0.0;
+    }
+}
+@keyframes pulsate {
+    0% {
+        transform: scale(1.0, 1.0);
+        opacity: 0.9;
+    }
+    /* 50% {
+        opacity: 1.0;
+    } */
+    100% {
+        transform: scale(2.5, 2.5);
+        opacity: 0.0;
+    }
 }

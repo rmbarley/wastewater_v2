@@ -176,6 +176,7 @@ $(window).bind('resize', onWindowResize);
 // Handle image toggle when user clicks on image map
 window.toggleView = function(view) {
   if ($(view).hasClass('hide')) {
+    $('.mapster_tooltip').css('display', 'none')
     $('.map_area').fadeToggle(300, 'linear', function() {
       $(view).toggleClass('hide');
     });

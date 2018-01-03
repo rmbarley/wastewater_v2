@@ -165,7 +165,7 @@ $('#fanModal').on('hidden.bs.modal', function () {
 
 window.applyBlur = function() {
   $('img[src$="_map.jpg"]').css({'filter': 'blur(3px)',
-    'transition': 'all 0.4s ease'
+    'transition': 'all 0.4s ease', '-ms-filter': 'blur(3px)'
   });
 }
 window.removeBlur = function() {

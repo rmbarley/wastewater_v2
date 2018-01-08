@@ -195,7 +195,7 @@ var v = document.getElementsByTagName("video")[1];
 var v2 = document.getElementsByTagName("video")[2];
 // generator
 var v3 = document.getElementsByTagName("video")[3];
-
+console.log(v, v2, v3)
 // console.log(document.getElementsByTagName("video"));
 
 // Autoplay video when modal is opened
@@ -217,19 +217,15 @@ $('#cabinetModal').on('hidden.bs.modal', function () {
 $('#generatorModal').on('shown.bs.modal', function () {
   v3.play();
 });
-$('#cabinetModal').on('hidden.bs.modal', function () {
-  v.currentTime = 0;
+$('#generatorModal').on('hidden.bs.modal', function () {
+  v3.currentTime = 0;
 });
+
 $('#fanModal').on('shown.bs.modal', function () {
   v2.play();
-  v2.addEventListener("ended", function() {
-      // Toggle hidden status after video plays
-      $('.fan-content').removeClass('hide');
-  });
 });
 $('#fanModal').on('hidden.bs.modal', function () {
   v2.currentTime = 0;
-  $('.fan-content').toggleClass('hide');
 });
 
 window.applyBlur = function() {

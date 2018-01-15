@@ -10,3 +10,24 @@ img {
   max-width: 100%;
   width: 100%;
 }
+
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.fa-times {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blurred {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: url(#blur);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+}

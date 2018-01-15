@@ -1,5 +1,6 @@
-
-var $tooltip = $('<div>', {"class": "mapster_tooltip"})
+var $tooltip = $('<div>', {
+  "class": "mapster_tooltip"
+})
 
 // Initialize Imagemapster plugin
 var mainOptions = {
@@ -13,46 +14,46 @@ var mainOptions = {
     altImage: './assets/images/alt_map.png'
   },
   areas: [{
-    key: 'sanitary',
-    toolTip: 'Administration & Maintenance'
-  },
-  {
-    key: 'pump',
-    toolTip: 'Primary Effluent Pump/Lift Station'
-  },
-  {
-    key: 'basin',
-    toolTip: 'Primary Settling Basins'
-  },
-  {
-    key: 'digesters',
-    toolTip: 'Anaerobic Digesters'
-  },
-  {
-    key: 'fermenters',
-    toolTip: 'Fermenters'
-  },
-  {
-    key: 'clarifiers',
-    toolTip: 'Primary Clarifiers &amp; Aeration Tanks'
-  },
-  {
-    key: 'bioreactors',
-    toolTip: 'Bioreactor'
-  },
-  {
-    key: 'degritters',
-    toolTip: 'Cyclone Degritters'
-  },
-  {
-    key: 'secondary_clarifiers',
-    toolTip: 'Secondary Clarifiers & Chlorine Tanks'
-  },
-  {
-    key: 'belt_filter',
-    toolTip: 'Digesters & Belt Filter Presses'
-  }
-]
+      key: 'sanitary',
+      toolTip: 'Administration & Maintenance'
+    },
+    {
+      key: 'pump',
+      toolTip: 'Primary Effluent Pump/Lift Station'
+    },
+    {
+      key: 'basin',
+      toolTip: 'Primary Settling Basins'
+    },
+    {
+      key: 'digesters',
+      toolTip: 'Anaerobic Digesters'
+    },
+    {
+      key: 'fermenters',
+      toolTip: 'Fermenters'
+    },
+    {
+      key: 'clarifiers',
+      toolTip: 'Primary Clarifiers &amp; Aeration Tanks'
+    },
+    {
+      key: 'bioreactors',
+      toolTip: 'Bioreactor'
+    },
+    {
+      key: 'degritters',
+      toolTip: 'Cyclone Degritters'
+    },
+    {
+      key: 'secondary_clarifiers',
+      toolTip: 'Secondary Clarifiers & Chlorine Tanks'
+    },
+    {
+      key: 'belt_filter',
+      toolTip: 'Digesters & Belt Filter Presses'
+    }
+  ]
 };
 
 var mapOptions = {
@@ -68,6 +69,10 @@ $('#main_map').mapster(mainOptions);
 $('#pump_station').mapster(mapOptions);
 var resizeTime = 0;
 var resizeDelay = 0;
+
+
+var isIE = navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1
+
 function resize(maxWidth, maxHeight) {
   var image = $('img'),
     imgWidth = image.width(),
@@ -115,7 +120,6 @@ window.toggleView = function(view) {
     $(view).toggleClass('hide');
     $('.map_area').fadeToggle(300, 'linear');
   }
-
   removeBlur();
   onWindowResize();
 }
@@ -130,47 +134,59 @@ console.log(v, v2, v3)
 // console.log(document.getElementsByTagName("video"));
 
 // Autoplay video when modal is opened
-$('#cabinetModal').on('shown.bs.modal', function () {
+$('#cabinetModal').on('shown.bs.modal', function() {
   v.play();
   // Pause video when animation ends
   v.addEventListener("ended", function() {
-      // Toggle hidden status after video plays
-      $('.cabinet').addClass('hide');
-      $('.cabinet_inside').removeClass('hide');
+    // Toggle hidden status after video plays
+    $('.cabinet').addClass('hide');
+    $('.cabinet_inside').removeClass('hide');
   });
 });
-$('#cabinetModal').on('hidden.bs.modal', function () {
+$('#cabinetModal').on('hidden.bs.modal', function() {
   v.currentTime = 0;
   $('.cabinet').toggleClass('hide');
   $('.cabinet_inside').toggleClass('hide');
 });
 // Clean this up later
-$('#generatorModal').on('shown.bs.modal', function () {
+$('#generatorModal').on('shown.bs.modal', function() {
   v3.play();
 });
-$('#generatorModal').on('hidden.bs.modal', function () {
+$('#generatorModal').on('hidden.bs.modal', function() {
   v3.currentTime = 0;
 });
 
-$('#fanModal').on('shown.bs.modal', function () {
+$('#fanModal').on('shown.bs.modal', function() {
   v2.play();
 });
-$('#fanModal').on('hidden.bs.modal', function () {
+$('#fanModal').on('hidden.bs.modal', function() {
   v2.currentTime = 0;
 });
 
 window.applyBlur = function() {
-  $('img[src$="_map.jpg"]').css({'filter': 'blur(3px)',
-    'transition': 'all 0.4s ease', '-ms-filter': 'blur(3px)'
-  });
+  // Trick IE11 into blurring the image
+  if (isIE) {
+    $('img[src$="_map.jpg"]').attr('src', './assets/images/blurred_main_map.jpg')
+  } else {
+    $('img[src$="_map.jpg"]').css({
+      filter: "blur(3px)",
+      transition: "all 0.4s ease"
+    });
+  }
 }
-window.removeBlur = function() {
-  $('img[src$="_map.jpg"]').css('filter', '');
+
+window.removeBlur = function(map) {
+  if (isIE) {
+    $('img[src$="_map.jpg"]').attr('src', './assets/images/`${main_map}`.jpg')
+  } else {
+    $('img[src$="_map.jpg"]').css("filter", "");
+  }
+
 }
 
 // When modal closes, scroll to top of screen
-$(window).on('hidden.bs.modal', function (e) {
-  window.scrollTo(0,0);
+$(window).on('hidden.bs.modal', function(e) {
+  window.scrollTo(0, 0);
 })
 
 

@@ -8,9 +8,7 @@
   <title>Waste Water Render</title>
   <link rel="stylesheet" href="./assets/plugins/bootstrap.min.css">
   <script src="https://use.fontawesome.com/7169fafb7e.js"></script>
-  <link rel="stylesheet" href="assets/styles/styles-082aee0bf1.css"/>
-
-  <script src="assets/scripts/Vendor-9fcb5fcd82.js"></script>
+  <link rel="stylesheet" href="assets/styles/styles-d22ea93951.css"/>
 </head>
 
 <body>
@@ -21,7 +19,7 @@
       <img src="./assets/images/main_map.jpg" usemap="#waste" id="main_map" alt="" />
       <map name="waste">
        <area shape="poly" coords="1802,79,1796,174,1805,188,1640,207,1639,180,1630,173,1615,170,1603,172,1594,175,1594,208,1506,217,1504,192,1495,185,1478,183,1467,184,1459,190,1460,222,661,301,620,182,606,126,1003,99,1003,59,1335,35,1335,11,1525,0,1671,1" href="#1" name="sanitary" onclick="toggleView(sanitary_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
-       <area shape="poly" coords="828,573,1098,535,1013,399,938,408,907,351,781,363,800,405,802,424,773,426" href="#2" name="pump" onclick="toggleView(pump_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
+       <area shape="poly" coords="828,573,1098,535,1013,399,938,408,907,351,781,363,800,405,802,424,773,426" href="#2" name="pump" onclick="toggleView(pump_view)" onmouseover="applyBlur(main_map)" onmouseout="removeBlur()"/>
        <area shape="poly" coords="997,292,1034,289,1033,277,1344,244,1431,334,1419,333,1406,332,1392,332,1378,333,1349,350,1308,356,1294,353,1281,350,1273,349,1260,348,1250,348,1240,349,1230,351,1217,355,1212,358,1205,364,1202,371,1202,384,1204,395,1074,411" href="#3" name="basin" onclick="toggleView(settling_basin_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
        <area shape="poly" coords="1175,432,1288,595,1590,546,1545,498,1546,433,1522,409,1521,405,1508,404,1478,399,1477,399,1475,362,1450,339,1451,334,1436,335,1432,335,1422,334,1410,333,1397,333,1389,333,1379,334,1372,336,1364,340,1355,345,1350,350,1351,351,1307,357,1299,355,1292,353,1284,351,1274,350,1264,349,1255,349,1246,349,1234,351,1224,354,1215,357,1209,361,1205,367,1203,370,1203,380,1208,429" href="#4" name="digesters" onclick="toggleView(digesters_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
        <area shape="poly" coords="1991,599,2237,553,2182,512,2180,511,2186,478,2182,470,2168,460,2168,454,2159,446,2143,446,2135,448,2135,453,2122,455,2125,431,2107,417,2105,406,2086,400,2074,406,2063,412,2064,390,2047,374,2046,368,2031,359,2015,365,1995,377,1990,425,1979,426,1968,421,1953,421,1943,420,1941,403,1925,391,1925,384,1907,377,1892,379,1892,386,1879,390,1871,398,1869,443,1819,451,1826,458" href="#5" name="fermenters" onclick="toggleView(fermenters_view)" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
@@ -83,7 +81,7 @@
           <h3 class="header__title">Sanitary Office</h3>
         </div>
       </div>
-      <img src="./assets/images/sanitary_office.png" id="sanitary_office" class="" usemap="#sanitary_office" alt="" class="img-responsive" />
+      <img data-src="./assets/images/sanitary_office.png" id="sanitary_office" class="blurify" usemap="#sanitary_office" alt="" class="img-responsive" />
     </div>
     <!-- /Sanitary Office Map -->
 
@@ -98,10 +96,10 @@
       <div class="map_container pump_container_fix">
         <img src="./assets/images/pump_map.jpg" id="pump_station" usemap="#pump" alt="" class="" height="100%" width="auto" />
         <map class="pump-map" name="pump">
-       <area shape="poly" coords="83,136,1064,123,1062,0,76,0,77,2" href="#1" data-toggle="modal" data-target="#fanModal" onmouseover="applyBlur()" onmouseout="removeBlur()" />
-       <area shape="poly" coords="630,629,690,644,930,591,929,650,935,653,943,653,950,653,954,651,953,587,973,582,972,637,976,639,982,639,983,578,1018,572,1017,339,923,330,824,342,821,327,811,325,794,327,791,346,619,363" href="#2" data-toggle="modal" data-target="#cabinetModal" onmouseover="applyBlur()" onmouseout="removeBlur()" />
-       <area shape="poly" coords="1919,724,1892,738,1244,622,1244,614,1174,604,1170,529,1109,527,1103,390,1170,400,1179,330,1302,324,1301,274,1332,268,1357,192,1366,180,1369,43,1352,41,1352,1,1529,2,1527,40,1506,41,1499,175,1516,196,1537,253,1541,268,1586,269,1585,333,1638,345,1656,335,1731,344,1723,466,1783,479,1793,462,1805,465,1809,417,1820,412,1826,344,1880,332,1918,336,1919,718" href="#3" data-toggle="modal" data-target="#generatorModal" onmouseover="applyBlur()" onmouseout="removeBlur()"/>
-       <area shape="poly" coords="0,1079,0,636,592,544,606,701,662,717,664,683,717,685,715,729,800,752,813,740,980,788,1021,764,1116,777,1132,728,1208,710,1252,736,1263,930,1368,968,1347,1079" href="#4" data-toggle="modal" data-target="#motorModal" onmouseover="applyBlur()" onmouseout="removeBlur()" />
+       <area shape="poly" coords="83,136,1064,123,1062,0,76,0,77,2" href="#1" data-toggle="modal" data-target="#fanModal" />
+       <area shape="poly" coords="630,629,690,644,930,591,929,650,935,653,943,653,950,653,954,651,953,587,973,582,972,637,976,639,982,639,983,578,1018,572,1017,339,923,330,824,342,821,327,811,325,794,327,791,346,619,363" href="#2" data-toggle="modal" data-target="#cabinetModal"  />
+       <area shape="poly" coords="1919,724,1892,738,1244,622,1244,614,1174,604,1170,529,1109,527,1103,390,1170,400,1179,330,1302,324,1301,274,1332,268,1357,192,1366,180,1369,43,1352,41,1352,1,1529,2,1527,40,1506,41,1499,175,1516,196,1537,253,1541,268,1586,269,1585,333,1638,345,1656,335,1731,344,1723,466,1783,479,1793,462,1805,465,1809,417,1820,412,1826,344,1880,332,1918,336,1919,718" href="#3" data-toggle="modal" data-target="#generatorModal" />
+       <area shape="poly" coords="0,1079,0,636,592,544,606,701,662,717,664,683,717,685,715,729,800,752,813,740,980,788,1021,764,1116,777,1132,728,1208,710,1252,736,1263,930,1368,968,1347,1079" href="#4" data-toggle="modal" data-target="#motorModal"  />
         </map>
         <div class="hotspot" id="cabinet" data-toggle="modal" data-target="#cabinetModal">
           <div class="pulse"></div>
@@ -254,6 +252,7 @@
     </div>
     <!-- /Belt Filters Map -->
   </div>
+
   <!-- Modals -->
   <!-- 2. Pump Station Modals -->
   <div class="modal modal-fullscreen" id="cabinetModal">
@@ -539,22 +538,18 @@
                   </div>
                 </div>
               </div>
-
               <div class="modal-text">
                 <h4>Regal’s Sludge Drive Solutions</h4>
-<p>Our Browning<sup>®</sup> and Foote-Jones<sup>®</sup> brands of sludge drives provide reliable, dependable service in the and are designed specifically for this harsh application environment.</p>
-<h4>Sludge Drives</h4>
-<p>We are an industry leader in mechanical sludge drives.  Our designs incorporate double extended output shafts to drive the drag conveyors and a third shaft at right angles to drive the cross-collector drag conveyor.  Synthetic lubricants provide for a superior ambient range in extreme temperatures.  A robust spiral bevel final gear reduction has a high B-10 bearing life with the front and side shafts having the same diameters thus simplifying installation.  The front foot mounting (Browning) enhances mounting integrity.  The modular design allows for a wide range of motor mounting options.</p>
-<h4>Lifecycle<sup>®</sup> Services</h4>
-<p>Our Lifecycle<sup>®</sup> Services team can repair reducers and enhance mechanical and electrical systems. Quick change out of worn out components and uptime is what drives our business. We have the know-how and expertise that takes the worry out that is associated with unscheduled breakdowns and outages.</p>
-
-             <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
-                <ul class="modal--link_list">
-                  <li class="modal--link_list__links"><a href="#" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>  Foote-Jones® Sludge Collector MCB16020E Form 6156E
-</a></li>
-                  <li class="modal--link_list__links"><a href="#" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>  Lifecycle® Services MCSSI17007E Form 10149E
-</a></li>
-                </ul>
+                  <p>Our Browning<sup>®</sup> and Foote-Jones<sup>®</sup> brands of sludge drives provide reliable, dependable service in the and are designed specifically for this harsh application environment.</p>
+                  <h4>Sludge Drives</h4>
+                  <p>We are an industry leader in mechanical sludge drives.  Our designs incorporate double extended output shafts to drive the drag conveyors and a third shaft at right angles to drive the cross-collector drag conveyor.  Synthetic lubricants provide for a superior ambient range in extreme temperatures.  A robust spiral bevel final gear reduction has a high B-10 bearing life with the front and side shafts having the same diameters thus simplifying installation.  The front foot mounting (Browning) enhances mounting integrity.  The modular design allows for a wide range of motor mounting options.</p>
+                  <h4>Lifecycle<sup>®</sup> Services</h4>
+                  <p>Our Lifecycle<sup>®</sup> Services team can repair reducers and enhance mechanical and electrical systems. Quick change out of worn out components and uptime is what drives our business. We have the know-how and expertise that takes the worry out that is associated with unscheduled breakdowns and outages.</p>
+                  <a href="https://www.regalbeloit.com/en/Industries/Water-and-Wastewater" class="btn btn__modal" style="text-align:center;" target="_blank">See Our <b>Product Family</b></a>
+                  <ul class="modal--link_list">
+                    <li class="modal--link_list__links"><a href="#" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>  Foote-Jones® Sludge Collector MCB16020E Form 6156E</a></li>
+                    <li class="modal--link_list__links"><a href="#" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>  Lifecycle® Services MCSSI17007E Form 10149E</a></li>
+                  </ul>
               </div>
             </div>
           </div>
@@ -937,7 +932,7 @@
   <script src="./assets/plugins/bootstrap.min.js"></script>
   <script src="https://www.jqueryscript.net/demo/Responsive-Fullscreen-Modal-Plugin-For-Bootstrap-3-4/dist/bs-modal-fullscreen.js"></script>
   <script src="./assets/plugins/imagemapster.min.js"></script>
-  <script src="assets/scripts/App-b9addcbecd.js"></script>
+  <script src="assets/scripts/App-bbd84990e8.js"></script>
 </body>
 
 </html>

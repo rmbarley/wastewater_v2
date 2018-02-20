@@ -37,7 +37,7 @@
 
 #bioreactor {
   left: 55%;
-top: 48%;
+  top: 48%;
 }
 
 #degritter {
@@ -81,11 +81,17 @@ top: 48%;
 #sludge_drive {
   left: 69%;
   top: 32%;
+  @mixin atSmall {
+    left: 62%;
+  }
 }
 
 #contactor_drive {
-  left: 22%;
+  left: 25%;
   top: 53%;
+  @mixin atSmall {
+    left: 20%;
+  }
 }
 
 /* 4. Anaerobic Digester Hotspots */
@@ -103,13 +109,17 @@ top: 48%;
 }
 /* 5. Fermenter Hotspot */
 #fermenter_center {
-    left: 40%;
-    top: 55%;
+  left: 40%;
+  top: 55%;
 }
 /* 6. Primary Aeration Clarifier Hotspot */
 #clarifier_center {
   left: 50%;
-  top: 47%;
+  top: 40%;
+  @mixin atSmall {
+    left: 47.5%;
+    top: 47%;
+  }
 }
 /* 7. Bioreactor Hotspot */
 
@@ -142,7 +152,7 @@ top: 48%;
     margin-left: -10px;
     margin-top: -10px;
     border-radius: 50%;
-    position: inline;
+    position: absolute;
     background: $regalPurple;
     border: 2px solid $regalPurple;
     top: 50%;
@@ -192,51 +202,51 @@ top: 48%;
 
 @-webkit-keyframes pulsate {
   0% {
-    -webkit-transform: scale(1.0, 1.0);
+    -webkit-transform: scale(1, 1);
     opacity: 0.9;
   }
   /*     50% {opacity: 0.85;} */
   100% {
     -webkit-transform: scale(2.5, 2.5);
-    opacity: 0.0;
+    opacity: 0;
   }
 }
 @-ms-keyframes pulsate {
-    0% {
-        -ms-transform: scale(1.0, 1.0);
-        opacity: 0.9;
-    }
-    /* 50% {
+  0% {
+    -ms-transform: scale(1, 1);
+    opacity: 0.9;
+  }
+  /* 50% {
         opacity: 1.0;
     } */
-    100% {
-        -ms-transform: scale(2.5, 2.5);
-        opacity: 0.0;
-    }
+  100% {
+    -ms-transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
 }
 @-o-keyframes pulsate {
-    0% {
-        -o-transform: scale(1.0, 1.0);
-        opacity: 0.9;
-    }
-    /* 50% {
+  0% {
+    -o-transform: scale(1, 1);
+    opacity: 0.9;
+  }
+  /* 50% {
         opacity: 1.0;
     } */
-    100% {
-        -o-transform: scale(2.5, 2.5);
-        opacity: 0.0;
-    }
+  100% {
+    -o-transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
 }
 @keyframes pulsate {
-    0% {
-        transform: scale(1.0, 1.0);
-        opacity: 0.9;
-    }
-    /* 50% {
+  0% {
+    transform: scale(1, 1);
+    opacity: 0.9;
+  }
+  /* 50% {
         opacity: 1.0;
     } */
-    100% {
-        transform: scale(2.5, 2.5);
-        opacity: 0.0;
-    }
+  100% {
+    transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
 }
